@@ -77,7 +77,7 @@ const ConsumerProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fefefe] font-sans">
+    <div className="min-h-screen  bg-[#fefefe] font-sans">
       <Header2></Header2>
       {consumer ? (
         <div className="max-w-3xl mx-auto p-4">
@@ -237,8 +237,7 @@ const ConsumerProfile = () => {
           </div>
         </div>
       ) : (
-        <div className="flex justify-center items-center min-h-screen text-gray-500 text-lg">
-          Loading profile...
+        <div className="profile-loader flex items-center justify-center h-[80vh]"> Profile-Loding
         </div>
       )}
     </div>

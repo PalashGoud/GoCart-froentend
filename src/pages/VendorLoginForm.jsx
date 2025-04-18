@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Header2 from "../components/Header2";
+import Header from "../components/HeaderVendor";
 
 const VendorLoginForm = () => {
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ const VendorLoginForm = () => {
         backgroundAttachment: "fixed", // Ensures the image doesn't scroll
       }}
     >
-      <Header2 />
+      <Header />
       <div className="max-w-md mx-auto mt-40 p-10 bg-amber-50   rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold mb-6 text-center text-green-700">
           Vendor Login

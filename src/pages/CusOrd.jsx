@@ -115,8 +115,8 @@ const ConsumerOrderPage = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {products.length === 0 ? (
-            <p className="col-span-full text-center text-gray-600">
-              No products found for this vendor.
+            <p className="products-loader  text-center">
+              Products Loding
             </p>
           ) : (
             products.map((product) => {

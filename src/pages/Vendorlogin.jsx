@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import Header2 from "../components/Header2";
+import Header from "../components/HeaderVendor";
 
 
 const VendorJoinPage = () => {
@@ -47,7 +47,7 @@ const VendorJoinPage = () => {
         "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZndbiVdR5Ma7J0wbvSEaHl0MX25QpBU0pW0mtvvwQEotxh8Vf5CxLocPqQdHXldktkTQ&usqp=CAU')",
     }}
   >
-      <Header2></Header2>
+      <Header></Header>
       <div className="flex justify-center mb-10">
    
   </div>

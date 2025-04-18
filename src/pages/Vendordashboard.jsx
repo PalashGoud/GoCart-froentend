@@ -158,10 +158,7 @@ const VendorDashboard = () => {
           <span className="text-xl font-bold text-green-700">GoCart Dashboard</span>
         </Link>
         <div className="flex items-center space-x-4">
-          <IoSearch className="text-gray-600 text-xl cursor-pointer" />
-          <Link to="/profile">
-            <FaUserCircle className="text-gray-700 text-2xl hover:text-green-700" />
-          </Link>
+         
         </div>
       </div>
 

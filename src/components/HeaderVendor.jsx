@@ -12,7 +12,7 @@ function Header2() {
       <img src="/image.png" alt="GoCart Logo" className="w-9 h-9" />
       <span className="text-lg font-bold text-green-700">GoCart</span>
     </Link>
-    <FaUserCircle onClick={()=>navigate("/profile")}  className="text-gray-700 text-2xl hover:text-green-700" />
+    <FaUserCircle onClick={()=>navigate("/vendordashboard")}  className="text-gray-700 text-2xl hover:text-green-700" />
   </div>
   )
 }

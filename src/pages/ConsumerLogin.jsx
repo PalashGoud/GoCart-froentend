@@ -27,7 +27,7 @@ const ConsumerLogin = () => {
         localStorage.setItem("consumer_id", JSON.stringify(consumer._id));
         localStorage.setItem("consumer_mobile", consumer.mobile_number);
         alert("Login Successful!");
-        navigate("/cusord");
+        navigate("/venders");
       })
       .catch((err) => {
         console.error(err);

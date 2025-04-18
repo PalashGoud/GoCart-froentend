@@ -30,9 +30,9 @@ const VendorsListPage = () => {
       </h2> 
 
       {/* 📌 Vendors Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-8">
         {vendors.length === 0 ? (
-          <p className="col-span-full text-center text-gray-500 text-lg">No vendors available.</p>
+          <div className="vender-loader flex items-center justify-center h-[50vh] ">venders-loading</div>
         ) : (
           vendors.map((vendor) => (
             <div
