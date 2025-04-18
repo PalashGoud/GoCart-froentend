@@ -27,7 +27,7 @@ const ConsumerAuthPage = () => {
       );
       console.log("User registered:", response.data.data);
       localStorage.setItem("consumer_id", JSON.stringify(response.data.data._id));
-      localStorage.setItem("token", response.data.data.token);
+      localStorage.setItem("token", response.data.token);
       alert("Registered successfully!");
       navigate("/venders");
     } catch (error) {
