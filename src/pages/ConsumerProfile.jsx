@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Header2 from "../components/Header2";
 
 const ConsumerProfile = () => {
   const [activeTab, setActiveTab] = useState("orders");
@@ -77,6 +78,7 @@ const ConsumerProfile = () => {
 
   return (
     <div className="min-h-screen bg-[#fefefe] font-sans">
+      <Header2></Header2>
       {consumer ? (
         <div className="max-w-3xl mx-auto p-4">
           {/* Header */}

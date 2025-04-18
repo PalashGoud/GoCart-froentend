@@ -34,46 +34,58 @@ const VendorLoginForm = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-green-100 to-blue-50">   <Header2></Header2>
-    <div className="max-w-md mx-auto mt-40 p-10 bg-[#EAF7F9] rounded-lg shadow">
-    
-      <h2 className="text-2xl font-bold mb-4 text-center text-green-600">
-        Vendor Login
-      </h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="number"
-          name="mobile_number"
-          placeholder="Mobile Number"
-          value={formData.mobile_number}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <button
-          type="submit"
-          className="bg-green-600 text-white w-full py-2 rounded hover:bg-green-700"
-        >
-          Submit
-        </button>
-      </form>
-      <div className="mt-4 text-sm text-center text-gray-600">
-        Don’t have an account?
-        <button onClick={()=> navigate('/vendorlogin')}
-          className="text-green-700 font-medium hover:underline">
-          Sign up here
-        </button>
+    <div
+      className="bg-gradient-to-r from-green-100 to-blue-50 min-h-screen"
+      style={{
+        backgroundImage:
+          "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc2I0veDVr9YEMkCkx5GQv4WX_rRHn5YQiaw&s')",
+        backgroundSize: "",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed", // Ensures the image doesn't scroll
+      }}
+    >
+      <Header2 />
+      <div className="max-w-md mx-auto mt-40 p-10 bg-amber-50  rounded-lg shadow-lg">
+        <h2 className="text-3xl font-bold mb-6 text-center text-green-700">
+          Vendor Login
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <input
+            type="number"
+            name="mobile_number"
+            placeholder="Mobile Number"
+            value={formData.mobile_number}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            required
+          />
+          <button
+            type="submit"
+            className="w-full py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300"
+          >
+            Submit
+          </button>
+        </form>
+        <div className="mt-4 text-sm text-center text-gray-400">
+          Don’t have an account?{" "}
+          <button
+            onClick={() => navigate('/vendorlogin')}
+            className="text-green-900 font-semibold hover:underline"
+          >
+            Sign up here
+          </button>
+        </div>
       </div>
-    </div> </div>
+    </div>
   );
 };
 

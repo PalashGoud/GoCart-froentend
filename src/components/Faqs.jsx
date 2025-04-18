@@ -53,7 +53,7 @@ const FAQSection = () => {
           </div>
         ))}
       </div>
-      <div className="text-center mt-10">
+      {/* <div className="text-center mt-10">
         <p className="text-lg text-gray-700">Still have questions?</p>
         <a
           href="/contact"
@@ -61,7 +61,7 @@ const FAQSection = () => {
         >
           Contact Us
         </a>
-      </div>
+      </div> */}
     </section>
   );
 };

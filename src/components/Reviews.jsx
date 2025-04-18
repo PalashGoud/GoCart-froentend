@@ -1,70 +1,70 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination, Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
 import { FaStar } from "react-icons/fa";
 
-const testimonials = [
+const reviews = [
   {
     name: "Amit Sharma",
-    review: "GoCart ne mera kaam bohot aasan kar diya! Ab fresh fruits aur vegetables ghar baithe mil jate hain.",
+    text: "GoCart has completely changed how I order veggies. Fast delivery and trusted vendors!",
     rating: 5,
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    name: "Neha Verma",
-    review: "Bahut hi reliable service! Load transport booking ka experience seamless raha.",
-    rating: 4.5,
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Priya Verma",
+    text: "Loved how easy it was to find local sellers. Great for both buyers and vendors!",
+    rating: 4,
   },
   {
-    name: "Rohit Singh",
-    review: "Vendors ke liye ek game-changer! Mere sales aur customers dono badh gaye hain.",
+    name: "Rajeev Singh",
+    text: "Best experience! I placed my order and it arrived fresh and quick.",
     rating: 5,
-    image: "https://randomuser.me/api/portraits/men/47.jpg",
   },
 ];
 
-const TestimonialSection = () => {
+const Reviews = () => {
   return (
-    <section className="py-16 bg-green-700 text-center">
-      <h2 className="text-3xl font-bold text-green-700 mb-8">GoCart Users Love Us!</h2>
-      <div className="max-w-4xl mx-auto">
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          autoplay={{ delay: 3000 }}
-          pagination={{ clickable: true }}
-          className="py-6"
-        >
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-white p-6 shadow-lg rounded-xl flex flex-col items-center">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full mb-4 border-4 border-green-300"
-                />
-                <p className="text-gray-700 italic mb-4">"{testimonial.review}"</p>
-                <div className="flex mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar
-                      key={i}
-                      className={`text-yellow-400 ${i < Math.floor(testimonial.rating) ? "" : "opacity-50"}`}
-                    />
-                  ))}
-                </div>
-                <h4 className="text-green-700 font-semibold">{testimonial.name}</h4>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <section className="bg-green-700 py-20 px-6 text-center">
+      {/* Heading */}
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+      >
+        What Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">Users Say</span>
+      </motion.h2>
+
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-gray-300 max-w-2xl mx-auto mb-12"
+      >
+        Real feedback from people using GoCart daily.
+      </motion.p>
+
+      {/* Reviews Grid */}
+      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {reviews.map((review, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.04 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2, duration: 0.6 }}
+            className="bg-gray-50 rounded-xl shadow-md p-6 border border-gray-100"
+          >
+            <div className="flex justify-center mb-4">
+              {[...Array(review.rating)].map((_, i) => (
+                <FaStar key={i} className="text-yellow-400 mx-0.5" />
+              ))}
+            </div>
+            <p className="text-gray-700 italic mb-4">"{review.text}"</p>
+            <h3 className="text-lg font-semibold text-gray-900">{review.name}</h3>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
 };
 
-export default TestimonialSection;
+export default Reviews;

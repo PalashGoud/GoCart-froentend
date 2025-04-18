@@ -1,6 +1,7 @@
+// src/pages/ConsumerAuthPage.jsx
+
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header2 from "../components/Header2";
 
@@ -9,6 +10,7 @@ const ConsumerAuthPage = () => {
     name: "",
     mobile_number: "",
     password: "",
+    email: ""
   });
 
   const navigate = useNavigate();
@@ -26,10 +28,9 @@ const ConsumerAuthPage = () => {
         authData
       );
       console.log("User registered:", response.data.data);
-      // Store consumer ID if needed
       localStorage.setItem("consumer_id", JSON.stringify(response.data.data._id));
       alert("Registered successfully!");
-      navigate("/cusord"); // Redirect to orders or dashboard page
+      navigate("/venders"); // Redirect to orders or dashboard page
     } catch (error) {
       console.error("Registration failed:", error);
       alert("Registration failed. Please try again.");
@@ -38,15 +39,11 @@ const ConsumerAuthPage = () => {
 
   return (
     <div className="bg-gradient-to-r from-green-100 to-blue-50 min-h-screen">
-      {/* Header */}
-      <Header2></Header2>
+      <Header2 />
 
-      {/* Auth Form */}
       <div className="flex items-center justify-center mt-10 px-4">
         <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-lg">
-          <h2 className="text-2xl font-bold text-center text-green-700 mb-6">
-            Consumer Signup
-          </h2>
+          <h2 className="text-2xl font-bold text-center text-green-700 mb-6">Consumer Signup</h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
@@ -54,6 +51,15 @@ const ConsumerAuthPage = () => {
               name="name"
               placeholder="Full Name"
               value={authData.name}
+              onChange={handleChange}
+              className="w-full border p-2 rounded-md"
+              required
+            />
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={authData.email}
               onChange={handleChange}
               className="w-full border p-2 rounded-md"
               required
@@ -96,7 +102,6 @@ const ConsumerAuthPage = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <footer className="mt-10 bg-gray-900 text-gray-300 p-4 text-center text-xs">
         <p>© 2025 GoCart. All Rights Reserved.</p>
       </footer>
