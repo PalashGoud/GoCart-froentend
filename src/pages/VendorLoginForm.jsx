@@ -40,12 +40,12 @@ const VendorLoginForm = () => {
         backgroundImage:
           "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc2I0veDVr9YEMkCkx5GQv4WX_rRHn5YQiaw&s')",
         backgroundSize: "",
-        backgroundPosition: "center",
+        backgroundPosition: "cover",
         backgroundAttachment: "fixed", // Ensures the image doesn't scroll
       }}
     >
       <Header2 />
-      <div className="max-w-md mx-auto mt-40 p-10 bg-amber-50  rounded-lg shadow-lg">
+      <div className="max-w-md mx-auto mt-40 p-10 bg-amber-50   rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold mb-6 text-center text-green-700">
           Vendor Login
         </h2>

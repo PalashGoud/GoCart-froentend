@@ -1,5 +1,3 @@
-// src/pages/ConsumerAuthPage.jsx
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -10,7 +8,7 @@ const ConsumerAuthPage = () => {
     name: "",
     mobile_number: "",
     password: "",
-    email: ""
+    email: "",
   });
 
   const navigate = useNavigate();
@@ -29,8 +27,9 @@ const ConsumerAuthPage = () => {
       );
       console.log("User registered:", response.data.data);
       localStorage.setItem("consumer_id", JSON.stringify(response.data.data._id));
+      localStorage.setItem("token", response.data.data.token);
       alert("Registered successfully!");
-      navigate("/venders"); // Redirect to orders or dashboard page
+      navigate("/venders");
     } catch (error) {
       console.error("Registration failed:", error);
       alert("Registration failed. Please try again.");
@@ -38,12 +37,20 @@ const ConsumerAuthPage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-green-100 to-blue-50 min-h-screen">
+    <div
+      className="min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage:
+          "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfLfqfjbdqqAIBIEp5eucvTb3G76S4THeBMw&s')",
+      }}
+    >
       <Header2 />
 
-      <div className="flex items-center justify-center mt-10 px-4">
-        <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-lg">
-          <h2 className="text-2xl font-bold text-center text-green-700 mb-6">Consumer Signup</h2>
+      <div className="flex items-center justify-center px-4 py-16">
+        <div className=" bg-opacity-90 backdrop-blur-sm p-8 rounded-xl shadow-xl w-full max-w-lg">
+          <h2 className="text-2xl font-bold text-center text-green-700 mb-6">
+            Consumer Signup
+          </h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
@@ -52,16 +59,16 @@ const ConsumerAuthPage = () => {
               placeholder="Full Name"
               value={authData.name}
               onChange={handleChange}
-              className="w-full border p-2 rounded-md"
+              className="w-full border p-3 rounded-md"
               required
             />
             <input
-              type="text"
+              type="email"
               name="email"
               placeholder="Email"
               value={authData.email}
               onChange={handleChange}
-              className="w-full border p-2 rounded-md"
+              className="w-full border p-3 rounded-md"
               required
             />
             <input
@@ -70,7 +77,7 @@ const ConsumerAuthPage = () => {
               placeholder="Mobile Number"
               value={authData.mobile_number}
               onChange={handleChange}
-              className="w-full border p-2 rounded-md"
+              className="w-full border p-3 rounded-md"
               required
             />
             <input
@@ -79,7 +86,7 @@ const ConsumerAuthPage = () => {
               placeholder="Password"
               value={authData.password}
               onChange={handleChange}
-              className="w-full border p-2 rounded-md"
+              className="w-full border p-3 rounded-md"
               required
             />
             <button
@@ -90,7 +97,7 @@ const ConsumerAuthPage = () => {
             </button>
           </form>
 
-          <p className="mt-4 text-sm text-center text-gray-600">
+          <p className="mt-4 text-sm text-center text-gray-700">
             Already have an account?{" "}
             <span
               className="text-green-700 font-medium cursor-pointer hover:underline"

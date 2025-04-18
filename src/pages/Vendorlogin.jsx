@@ -40,16 +40,25 @@ const VendorJoinPage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-green-100 to-blue-50 min-h-screen p-8">
+    <div
+    className="min-h-screen bg-cover bg-center bg-no-repeat p-8"
+    style={{
+      backgroundImage:
+        "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZndbiVdR5Ma7J0wbvSEaHl0MX25QpBU0pW0mtvvwQEotxh8Vf5CxLocPqQdHXldktkTQ&usqp=CAU')",
+    }}
+  >
       <Header2></Header2>
-      <div className="flex items-center mt-4 justify-center mb-10">
-        
-        <h2 className="text-4xl font-extrabold text-gray-900">
-          🚀 Join as a Vendor
-        </h2>
-      </div>
+      <div className="flex justify-center mb-10">
+   
+  </div>
 
-      <div className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-xl">
+  <div className="flex items-center justify-center mb-10">
+    <h2 className="text-4xl font-extrabold text-gray-900">
+      🚀 Join as a Vendor
+    </h2>
+  </div>
+
+      <div className="max-w-lg mx-auto  p-8 rounded-lg shadow-xl">
         <div>
           {/* Full Name */}
           <div className="mb-6">
